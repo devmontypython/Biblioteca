@@ -7,32 +7,33 @@ use App\Model\Aluno;
 class AlunoDAO {
     public function save(Aluno $model) : Aluno {
 
-        if($model -> id == null) {
+        /* if($model -> id == null) {
             return $this -> insert($model);
         } else {
             return $this -> update($model);
-        }
+        } */
 
-        // OPERADOR TERNÁRIO        
+        // OPERADOR TERNÁRIO
+        return ($model->id == null) ? $this->insert($model) : $this->update($model);        
     }
 
-    public function insert(Aluno $model) {
-
+    public function insert(Aluno $model): Aluno {
+        return new Aluno();
     }
 
-    public function update(Aluno $model) {
-
+    public function update(Aluno $model): Aluno {
+        return new Aluno();
     }
 
-    public function selectById(int $id) {
-
+    public function selectById(int $id): ?Aluno {
+        return new Aluno();
     }
 
-    public function select() {
-
+    public function select(): array {
+        return [];
     }
 
-    public function delete(int $id) {
-
+    public function delete(int $id): bool {
+        return false;
     }
 }

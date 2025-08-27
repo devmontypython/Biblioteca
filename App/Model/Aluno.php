@@ -2,12 +2,14 @@
 
 namespace App\Model;
 
+use App\DAO\AlunoDAO;
+
 class Aluno {
     
     public $id, $nome, $ra, $curso;
 
     function save() {
-        return new Aluno();
+        return (new AlunoDAO()) -> save($this);
     }
 
     function getById(int $id): ?Aluno {
