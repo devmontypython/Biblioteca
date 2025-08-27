@@ -18,10 +18,12 @@ class AlunoDAO {
     }
 
     public function insert(Aluno $model): Aluno {
+        var_dump($model);
         return new Aluno();
     }
 
     public function update(Aluno $model): Aluno {
+        var_dump($model);
         return new Aluno();
     }
 
